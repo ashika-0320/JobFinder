@@ -38,9 +38,6 @@ public void generateRecommendation(){
             location1= rsLoc.getString("location");
         }
        if(skills!=null && location1!=null){
-           System.out.println("lets filter" );
-           System.out.println(location1);
-           System.out.println(skills);
            jobService.filterCombined(location1,skills);
        }
     } catch (SQLException e) {

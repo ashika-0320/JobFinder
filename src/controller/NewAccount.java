@@ -26,6 +26,7 @@ private UserProfileRepo userProfileRepo = new UserProfileRepo();
         System.out.println("Enter preferred location");
         location= sc.nextLine();
         int uid= userRepo.insertUser(name);
+        UserRepo.currentUid = uid;
         userProfileRepo.insertProile(uid,jtitle,skills,location);
         userController.display();
     }

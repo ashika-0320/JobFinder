@@ -6,7 +6,6 @@ import java.util.Scanner;
 import java.util.function.Predicate;
 
 public class Main {
-    public static int currentUid;
     public static void main(String[] args){
         NewAccount newAccount = new NewAccount();
         UserRepo userRepo = new UserRepo();

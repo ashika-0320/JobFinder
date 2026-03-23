@@ -9,7 +9,7 @@ public class UserRepo {
     public static int currentUid;
     DBconnection db= new DBconnection();
     UserController userController = new UserController();
-    String uidSearch = "Select 1 from user where uid = ?";
+    String uidSearch = "Select uid from user where uid = ?";
     String storeUser = "Insert into user (name) values (?)";
 
     public void checkUser(){
@@ -23,6 +23,7 @@ public class UserRepo {
             ResultSet rs = ps.executeQuery();
             if (rs.next()){
                 currentUid =rs.getInt(1);
+                System.out.println("Current Uid =" + currentUid);
             userController.display();
 
             }

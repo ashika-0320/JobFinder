@@ -49,8 +49,8 @@ public class JobService {
 
     public void filterCombined(String location, String skills){
         List <Job> jobs = repo.getJobFromDB();
-        System.out.println(jobs);
         List <String> inputSkills = Arrays.stream(skills.split(",")).map(s->s.trim().toLowerCase()).toList();
+        System.out.println(inputSkills);
         List <Job> filteredJobs = jobs.stream().filter(job->job.getLocation().equalsIgnoreCase(location)).filter(job->Arrays.stream(job.getSkills().split(",")).map(s->s.trim().toLowerCase()).anyMatch(skill->inputSkills.contains(skill))).toList();
         if (filteredJobs.isEmpty()){
             System.out.println("Not Found!");
